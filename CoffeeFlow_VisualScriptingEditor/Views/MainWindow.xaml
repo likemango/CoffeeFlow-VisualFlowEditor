@@ -12,9 +12,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type MenuItem}">
                         <Border x:Name="Border" 
-Background="{TemplateBinding Background}" 
-BorderBrush="{TemplateBinding BorderBrush}" 
-BorderThickness="{TemplateBinding BorderThickness}">
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition x:Name="Col0" MinWidth="17" Width="Auto" SharedSizeGroup="MenuItemIconColumnGroup"/>
@@ -30,16 +30,16 @@ BorderThickness="{TemplateBinding BorderThickness}">
                                 </Grid>
                                 <!-- Content for the menu text etc -->
                                 <ContentPresenter Grid.Column="1" 
-Margin="{TemplateBinding Padding}" 
-x:Name="HeaderHost" 
-RecognizesAccessKey="True" 
-ContentSource="Header"/>
+                                    Margin="{TemplateBinding Padding}" 
+                                    x:Name="HeaderHost" 
+                                    RecognizesAccessKey="True" 
+                                    ContentSource="Header"/>
                                 <!-- Content for the menu IGT -->
                                 <ContentPresenter Grid.Column="2" 
-Margin="8,1,8,1" 
-x:Name="IGTHost" 
-ContentSource="InputGestureText" 
-VerticalAlignment="Center"/>
+                                    Margin="8,1,8,1" 
+                                    x:Name="IGTHost" 
+                                    ContentSource="InputGestureText" 
+                                    VerticalAlignment="Center"/>
                                 <!-- Arrow drawn path which points to the next level of the menu -->
                                 <Grid Grid.Column="3" Margin="4,0,6,0" x:Name="ArrowPanel" VerticalAlignment="Center">
                                     <Path x:Name="ArrowPanelPath" HorizontalAlignment="Right" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Data="M0,0 L0,8 L4,4 z"/>
