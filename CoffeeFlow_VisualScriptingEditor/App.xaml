@@ -1,9 +1,21 @@
-<Application x:Class="CoffeeFlow.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="Views/MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<Application x:Class="CoffeeFlow.App" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             StartupUri="Views/MainWindow.xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:valueConverters="clr-namespace:CoffeeFlow.ValueConverters">
   <Application.Resources>
-        <valueConverters:ToUpperValueConverter x:Key="toUpperConverter"/>
+         <!--#region 定义ValueConverters -->
+        <valueConverters:ToUpperValueConverter x:Key="toUpperConverter"/> 
         <valueConverters:EnabledToVisibilityConverter x:Key="enableToVisibilityConverter"/>
+        <!--#endregion-->
+
+        <!--#region ViewModelLocator设置为资源 -->
         <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:CoffeeFlow.ViewModel" />
+        <!--#endregion-->
+
         <SolidColorBrush x:Key="GrayBackgroundBrush" Color="#FF1D1B1B">
         </SolidColorBrush>
         <SolidColorBrush x:Key="ForegroundLightBrush" Color="#FFCDCDCD">
