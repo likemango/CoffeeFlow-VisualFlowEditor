@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" x:Name="nodeList" d:DesignWidth="300"  DataContext="{Binding Source={StaticResource Locator}}" Loaded="nodeList_Loaded" Height="379" Width="350">
+             mc:Ignorable="d" x:Name="nodeList"
+             d:DesignWidth="300" 
+             DataContext="{Binding Source={StaticResource Locator}}" 
+             Loaded="nodeList_Loaded" Height="379" Width="350">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="127*"/>
         </Grid.RowDefinitions>
         <ListBox HorizontalAlignment="Stretch" Margin="10,10,10,10" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden" x:Name="lstAvailableNodes" ItemsSource="{Binding ElementName=nodeList, Path=AvailableNodes}" VerticalAlignment="Stretch" Grid.RowSpan="1" Grid.Row="1">
-
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <DockPanel>
@@ -21,14 +23,23 @@
                                         AncestorType={x:Type UserControl}}}"
                                       CommandParameter="{Binding .}"/>
                             </StackPanel.InputBindings>
-                            <TextBlock Text="{Binding Path=NodeName}" HorizontalAlignment="Left">
-
-                            </TextBlock>
+                            <TextBlock Text="{Binding Path=NodeName}" HorizontalAlignment="Left"/>
                             <TextBlock Text="{Binding Path=DetailString}" FontSize="10" Margin="5,0,0,0" VerticalAlignment="Center" Height="Auto" Width="250" TextWrapping="Wrap" Foreground="Gray"></TextBlock>
                         </StackPanel>
+                        
                         <StackPanel HorizontalAlignment="Right">
-                            <Button Style="{StaticResource DarkButton}" Name="DeleteButton"  Content="✖" Width="15" Margin="0" FontSize="9" Background="#02DDDDDD" HorizontalAlignment="Right" IsEnabled="{Binding Path=IsDeletable}" Visibility="{Binding Path=IsDeletable, Converter={StaticResource enableToVisibilityConverter}}"  Command="{Binding DataContext.Main.DeleteNodeFromNodeListCommand, RelativeSource={RelativeSource FindAncestor, 
-                                        AncestorType={x:Type UserControl}}}" CommandParameter="{Binding .}" Foreground="#FFD67272" BorderBrush="#00707070" />
+                            <Button Style="{StaticResource DarkButton}" 
+                                    Name="DeleteButton"  Content="✖" 
+                                    Width="15" Margin="0" FontSize="9" 
+                                    Background="#02DDDDDD"
+                                    HorizontalAlignment="Right" 
+                                    IsEnabled="{Binding Path=IsDeletable}"
+                                    Visibility="{Binding Path=IsDeletable, 
+                                Converter={StaticResource enableToVisibilityConverter}}"  Command="{Binding DataContext.Main.DeleteNodeFromNodeListCommand, RelativeSource={RelativeSource FindAncestor, 
+                                        AncestorType={x:Type UserControl}}}" 
+                                    CommandParameter="{Binding .}" 
+                                    Foreground="#FFD67272" 
+                                    BorderBrush="#00707070" />
                         </StackPanel>
                     </DockPanel>
                     

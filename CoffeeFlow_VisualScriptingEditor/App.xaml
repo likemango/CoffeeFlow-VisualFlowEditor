@@ -7,12 +7,12 @@
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:valueConverters="clr-namespace:CoffeeFlow.ValueConverters">
   <Application.Resources>
-         <!--#region 定义ValueConverters -->
+         <!--#regionValueConverters -->
         <valueConverters:ToUpperValueConverter x:Key="toUpperConverter"/> 
         <valueConverters:EnabledToVisibilityConverter x:Key="enableToVisibilityConverter"/>
         <!--#endregion-->
 
-        <!--#region ViewModelLocator设置为资源 -->
+        <!--#region ViewModelLocator -->
         <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:CoffeeFlow.ViewModel" />
         <!--#endregion-->
 

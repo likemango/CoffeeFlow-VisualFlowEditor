@@ -123,15 +123,17 @@
         </Style>
     </Window.Resources>
     <Window.InputBindings>
-        <MouseBinding MouseAction="RightClick"  Command="{Binding ShowNodeListCommand,
-                                        RelativeSource={RelativeSource FindAncestor, 
-                                        AncestorType={x:Type Window}}}"
-                                      CommandParameter="{Binding .}"/>
+        <MouseBinding MouseAction="RightClick"  
+                      Command="{Binding ShowNodeListCommand,
+                     RelativeSource={RelativeSource FindAncestor, 
+                     AncestorType={x:Type Window}}}"
+                    CommandParameter="{Binding}"/>
 
-        <MouseBinding MouseAction="LeftClick"  Command="{Binding HideNodeListCommand,
-                                        RelativeSource={RelativeSource FindAncestor, 
-                                        AncestorType={x:Type Window}}}"
-                                      CommandParameter="{Binding .}"/>
+        <MouseBinding MouseAction="LeftClick" 
+                      Command="{Binding HideNodeListCommand,
+                     RelativeSource={RelativeSource FindAncestor, 
+                      AncestorType={x:Type Window}}}"
+                     CommandParameter="{Binding .}"/>
 
         <KeyBinding Command="{Binding Path=Network.DeleteNodesCommand}" 
                 Key="Delete" 
@@ -155,8 +157,23 @@
 
 
         <!--<ItemsControl Name="lol" ItemsSource="{Binding Network.Nodes}"></ItemsControl> -->
-        <base:NodeGrid HorizontalAlignment="Stretch" ItemsSource="{Binding Network.Nodes}" VerticalAlignment="Stretch"  x:Name="nodeGrid" Grid.ColumnSpan="2" Margin="0" Grid.RowSpan="2"  />
-        <views:NodeListWindow x:Name="lstAvailableNodes" IsCenter="False" Visibility="Collapsed" Background="#CC0E0E0E" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" ></views:NodeListWindow>
+        <base:NodeGrid
+            HorizontalAlignment="Stretch" 
+            ItemsSource="{Binding Network.Nodes}"
+            VerticalAlignment="Stretch" 
+            x:Name="nodeGrid" 
+            Grid.ColumnSpan="2" 
+            Margin="0" 
+            Grid.RowSpan="2"  />
+        <views:NodeListWindow x:Name="lstAvailableNodes" 
+                              IsCenter="False"
+                              Visibility="Collapsed" 
+                              Background="#CC0E0E0E"
+                              HorizontalAlignment="Left" 
+                              VerticalAlignment="Top"
+                              Grid.ColumnSpan="2" 
+                              Grid.RowSpan="2" >
+        </views:NodeListWindow>
 
 
         <Grid Grid.Row="1" Name="GridColumn1" Background="#4C000000">
